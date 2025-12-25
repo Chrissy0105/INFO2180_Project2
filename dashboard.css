@@ -177,3 +177,48 @@
         box-shadow: 0 0 10px #00ff7b, 0 0 40px #00ff7b, 0 0 80px #00ff7b;
     }
 }
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 38px; /* space for eye */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+    color: #32ff32;
+    user-select: none;
+}
+
+/* ===== USERS TABLE ===== */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 12px;
+    background: #022c22;
+    color: #32ff32;
+    border-bottom: 2px solid #064e3b;
+}
+
+.data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #064e3b;
+    color: #e5e7eb;
+}
+
+.data-table tr:hover {
+    background: #022c22;
+}
