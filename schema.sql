@@ -1,3 +1,9 @@
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS dolphin_crm;
+
+-- Switch to using the dolphin_crm database
+USE dolphin_crm;
+
 -- Schema for User and Contact Management System
 CREATE TABLE IF NOT EXISTS USERS (
     id INT PRIMARY KEY AUTO_INCREMENT,
