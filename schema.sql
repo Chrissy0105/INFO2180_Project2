@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS Contacts (
     email VARCHAR(100) NOT NULL,
     telephone VARCHAR(20),
     company VARCHAR(100),
-    type ENUM('lead','client','partner') DEFAULT 'lead',
+    type ENUM('Sales Lead','Support') DEFAULT 'Sales Lead',
     assigned_to INT,
     created_by INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

@@ -31,7 +31,8 @@ $role      = $_SESSION['role'] ?? '';
         <div class="sidebar">
             <ul>
                 <li><a href="dashboard.php">Home</a></li>
-                <li><a href="new_user.php">New Contact</a></li>
+                <li><a href="new_contact.php">New Contact</a></li>
+                <li><a href="new_user.php">New User</a></li>
                 <li><a href="view_users.php">Users</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
