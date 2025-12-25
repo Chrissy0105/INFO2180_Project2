@@ -1,5 +1,9 @@
 <?php
-require 'dbconnect.php';
+/*$conn = new mysqli("localhost", "root", "", "dolphin_crm");
+
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
 
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
@@ -18,7 +22,7 @@ if (!preg_match("/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/", $password)) {
 
 $hashed = password_hash($password, PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO users (firstname, lastname, email, password, role)
+$sql = "INSERT INTO USERS (firstname, lastname, email, password, role)
         VALUES (?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
@@ -29,3 +33,7 @@ if ($stmt->execute()) {
 } else {
     echo "Error: " . $conn->error;
 }
+
+$stmt->close();
+$conn->close();
+*/

@@ -10,7 +10,7 @@ session_start();
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class = "login-body">
 
     <div class="matrix-bg"></div>
 
