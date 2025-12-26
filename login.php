@@ -18,7 +18,6 @@ session_start();
         <div class="logo">🐬 Dolphin CRM</div>
     </header>
 
-    <!-- 🔹 ONLY ONE LOGIN CONTAINER -->
     <div class="login-container">
         <h1>Login</h1>
 

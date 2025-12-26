@@ -1,4 +1,3 @@
-/* ====== GLOBAL LAYOUT (dark neon) ====== */
 .app-body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -6,7 +5,6 @@
     color: #e5e7eb;
 }
 
-/* ====== TOP NAV BAR ====== */
 .top-nav {
     height: 60px;
     background: #020617;              /* very dark */
@@ -19,13 +17,11 @@
     box-shadow: 0 0 15px #00ff7b55;
 }
 
-/* ====== WRAPPER FOR SIDEBAR + MAIN ====== */
 .app-wrapper {
     display: flex;
     min-height: calc(100vh - 60px);
 }
 
-/* ====== SIDEBAR (dark with neon hover) ====== */
 .sidebar {
     width: 240px;
     background: #020617;
@@ -60,13 +56,11 @@
     box-shadow: inset 4px 0 0 #32ff32;
 }
 
-/* ====== MAIN CONTENT AREA ====== */
 .main-content {
     flex: 1;
     padding: 32px 56px;
 }
 
-/* ====== CARD (form container) ====== */
 .card {
     background: #020617;
     border-radius: 12px;
@@ -84,7 +78,6 @@
     text-shadow: 0 0 12px #32ff32;
 }
 
-/* ====== FORM GRID (2 COLUMNS) ====== */
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -95,7 +88,6 @@
     grid-column: 1 / -1;
 }
 
-/* ====== FORM FIELDS ====== */
 .form-field label {
     display: block;
     font-size: 12px;
@@ -128,7 +120,6 @@
     box-shadow: 0 0 0 1px #22c55e, inset 0 0 10px #22c55eaa;
 }
 
-/* ====== SAVE BUTTON (neon) ====== */
 .form-actions {
     display: flex;
     justify-content: flex-end;
@@ -154,7 +145,6 @@
     transform: translateY(-1px);
 }
 
-/* ====== FEEDBACK MESSAGE ====== */
 .feedback {
     margin-bottom: 16px;
     font-size: 14px;
@@ -165,7 +155,6 @@
     padding: 8px 10px;
 }
 
-/* ====== ANIMATIONS ====== */
 @keyframes neonPulse {
     0% {
         box-shadow: 0 0 10px #00ff7b, 0 0 40px #00ff7b, 0 0 80px #00ff7b;
@@ -183,7 +172,7 @@
 }
 
 .password-wrapper input {
-    padding-right: 38px; /* space for eye */
+    padding-right: 38px; 
 }
 
 .toggle-password {
@@ -197,7 +186,6 @@
     user-select: none;
 }
 
-/* ===== USERS TABLE ===== */
 .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -222,3 +210,57 @@
 .data-table tr:hover {
     background: #022c22;
 }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.add-user-btn {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filters {
+    margin-bottom: 16px;
+}
+
+.filters a {
+    margin-right: 12px;
+    font-size: 13px;
+    color: #9ca3af;
+    text-decoration: none;
+}
+
+.filters a:hover {
+    color: #32ff32;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge.sales-lead {
+    background: #facc15;
+    color: #000;
+}
+
+.badge.support {
+    background: #38bdf8;
+    color: #000;
+}
+
+.badge.sales-lead { background: #facc15; }
+.badge.support { background: #38bdf8; }

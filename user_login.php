@@ -1,13 +1,11 @@
 <?php
-session_start();        // Start the session 
+session_start();        
 
-//Database connection 
 $conn = new mysqli("localhost", "root", "", "dolphin_crm");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// User login 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];

@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Only allow logged-in Admins
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'administrator') {
     header("Location: login.php");
     exit();
@@ -9,7 +8,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'administrator') {
 
 $feedback = "";
 
-// Handle form submission
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $firstname = trim($_POST['firstname'] ?? '');
     $lastname = trim($_POST['lastname'] ?? '');
@@ -57,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Dolphin CRM – New User</title>
-    <!-- cache-bust with ?v=3 so the browser reloads the new CSS -->
+
     <link rel="stylesheet" href="dashboard.css?v=3">
 </head>
 
@@ -71,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <aside class="sidebar">
             <ul>
                 <li><a href="dashboard.php">Home</a></li>
-                <li><a href="new_user.php" class="active">New Contact</a></li>
-                <li><a href="view_users.php">Users</a></li>
+                <li><a href="new_contact.php">New Contact</a></li>
+                <li><a href="view_users.php" class="active">Users</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </aside>
