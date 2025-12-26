@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'administrator') {
 }
 
 /* Database connection (inline, as you chose) */
-$conn = new mysqli("localhost", "root", "", "dolphin_crm");
+$conn = new mysqli("localhost", "root", "Jamaicakl#1", "dolphin_crm");
 
 if ($conn->connect_error) {
     die("Database connection failed.");

@@ -1,6 +1,6 @@
 <?php
 //Database connection setup 
-$conn = new mysqli("localhost", "root", "", "info2180_project2");
+$conn = new mysqli("localhost", "root", "Jamaicakl#1", "info2180_project2");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

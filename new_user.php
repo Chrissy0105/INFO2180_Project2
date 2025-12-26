@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } elseif ($role !== "administrator" && $role !== "user") {
         $feedback = "Invalid role selected.";
     } else {
-        $conn = new mysqli("localhost", "root", "", "dolphin_crm");
+        $conn = new mysqli("localhost", "root", "Jamaicakl#1", "dolphin_crm");
 
         if ($conn->connect_error) {
             $feedback = "Database connection failed.";

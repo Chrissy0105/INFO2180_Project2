@@ -2,7 +2,7 @@
 session_start();        // Start the session 
 
 //Database connection 
-$conn = new mysqli("localhost", "root", "", "dolphin_crm");
+$conn = new mysqli("localhost", "root", "Jamaicakl#1", "dolphin_crm");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
