@@ -67,7 +67,7 @@ $result = $conn->query($sql);
                             : 'Unassigned'; ?>
                     </td>
                     <td>
-                        <a href="view_contact.php?id=<?= $row['id'] ?>">View</a>
+                        <a href="view_contact.php?id=<?= $row['id'] ?>" id="return_to_contact_from_view_contact">View</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
