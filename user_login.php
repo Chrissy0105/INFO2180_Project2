@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_result($id, $firstname, $lastname, $hashed_password, $role);
         $stmt->fetch();
 
-        if (!password_verify($password, $hashed_password)) {
+        if (password_verify($password, $hashed_password)) {
             // Password is correct, start a new session
             $_SESSION['user_id'] = $id;
             $_SESSION['firstname'] = $firstname;

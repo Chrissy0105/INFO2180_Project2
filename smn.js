@@ -79,7 +79,13 @@ document.addEventListener("DOMContentLoaded", function(event){
 		console.log("Clicked!: "+ url);
 		defaultajx(url);
 	});	
-	
+
+	$(document).on('click', '.btn-primary', function(e){
+		e.preventDefault();
+		let url = $(this).attr("href");
+		console.log("Clicked!: "+ url);
+		defaultajx(url);
+	});	
 	
 	$(document).on('click', '#button', function(e){
 		e.preventDefault();

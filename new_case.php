@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </select>
 
                 <div style="margin-top: 20px;">
-                    <button type="submit">Save Case</button>
+                    <button type="submit" id="_case">Save Case</button>
                 </div>
 
             </form>

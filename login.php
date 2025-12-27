@@ -25,7 +25,7 @@ session_start();
         <form class="login-form" method="POST" action="user_login.php">
             <input type="email" name="email" placeholder="Email address" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" id="logSub">Login</button>
+            <button type="submit" >Login</button>
         </form>
     </div>
 	<main class="main-content" id="main"></main>

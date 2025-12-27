@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <div class="form-field full-width">
                     <div class="form-actions">
-                        <button type="submit" class="btn-primary">Save Task</button>
+                        <button type="submit" id="task_">Save Task</button>
                     </div>
                 </div>
 
