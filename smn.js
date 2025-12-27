@@ -16,6 +16,11 @@ document.addEventListener("DOMContentLoaded", function(event){
 								});	
 	}
 	
+		event.preventDefault();
+		let url = "index.php";
+		console.log("Loaded!: "+ url);
+		defaultajx(url);
+	
 
 	$('#home').on('click',function(e){
 		e.preventDefault();
