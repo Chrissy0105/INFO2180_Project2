@@ -2,7 +2,7 @@
 session_start();
 
 // Only allow logged-in Admins
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'Admin') {
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'administrator') {
     header("Location: login.php");
     exit();
 }
@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $feedback = "Please enter a valid email address.";
     } elseif (!preg_match("/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/", $password)) {
         $feedback = "Password must be at least 8 characters and include a number, a lowercase and an uppercase letter.";
-    } elseif ($role !== "Admin" && $role !== "Member") {
+    } elseif ($role !== "administrator" && $role !== "user") {
         $feedback = "Invalid role selected.";
     } else {
-        $conn = new mysqli("localhost", "root", "", "info2180_project2");
+        $conn = new mysqli("localhost", "root", "", "dolphin_crm");
 
         if ($conn->connect_error) {
             $feedback = "Database connection failed.";
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
             $stmt = $conn->prepare(
-                "INSERT INTO users (firstname, lastname, email, password, role)
+                "INSERT INTO USERS (firstname, lastname, email, password, role)
                  VALUES (?, ?, ?, ?, ?)"
             );
             $stmt->bind_param("sssss", $firstname, $lastname, $email, $hashedPassword, $role);
@@ -51,33 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Dolphin CRM – New User</title>
-    <!-- cache-bust with ?v=3 so the browser reloads the new CSS -->
-    <link rel="stylesheet" href="dashboard.css?v=3">
-</head>
-
-<body class="app-body">
-
-    <div class="top-nav">
-        Dolphin CRM
-    </div>
-
-    <div class="app-wrapper">
-        <aside class="sidebar">
-            <ul>
-                <li><a href="dashboard.php">Home</a></li>
-                <li><a href="new_contact.php">New Contact</a></li>
-                <li><a href="new_user.php" class="active">Users</a></li>
-                <li><a href="logout.php">Logout</a></li>
-            </ul>
-        </aside>
-
-        <main class="main-content">
             <div class="card">
                 <div class="card-title">New User</div>
 
@@ -104,15 +77,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     <div class="form-field">
                         <label for="password">Password</label>
-                        <input id="password" type="password" name="password" required>
+                        <div class="password-wrapper">
+                            <input id="password" type="password" name="password" required>
+                            <span class="toggle-password" onclick="togglePassword()">👁</span>
+                        </div>
                     </div>
 
                     <div class="form-field full-width">
                         <label for="role">Role</label>
                         <select id="role" name="role" required>
                             <option value="">Select role</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Member">Member</option>
+                            <option value="administrator">Admin</option>
+                            <option value="user">Member</option>
                         </select>
                     </div>
 
@@ -124,9 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 </form>
             </div>
-        </main>
-    </div>
-
-</body>
-
-</html>
+    <script>
+    function togglePassword() {
+        const pwd = document.getElementById("password");
+        pwd.type = pwd.type === "password" ? "text" : "password";
+    }
+    </script>

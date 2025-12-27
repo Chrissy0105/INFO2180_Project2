@@ -1,4 +1,4 @@
-/* ====== GLOBAL LAYOUT (dark neon) ====== */
+/*  GLOBAL LAYOUT (dark neon)  */
 .app-body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -6,11 +6,11 @@
     color: #e5e7eb;
 }
 
-/* ====== TOP NAV BAR ====== */
+/*  TOP NAV BAR  */
 .top-nav {
     height: 60px;
-    background: #020617;              /* very dark */
-    color: #32ff32;                   /* neon green text */
+    background: #020617;
+    color: #32ff32;
     display: flex;
     align-items: center;
     padding: 0 32px;
@@ -19,13 +19,13 @@
     box-shadow: 0 0 15px #00ff7b55;
 }
 
-/* ====== WRAPPER FOR SIDEBAR + MAIN ====== */
+/*  WRAPPER  */
 .app-wrapper {
     display: flex;
     min-height: calc(100vh - 60px);
 }
 
-/* ====== SIDEBAR (dark with neon hover) ====== */
+/*  SIDEBAR  */
 .sidebar {
     width: 240px;
     background: #020617;
@@ -38,10 +38,6 @@
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.sidebar li {
-    margin-bottom: 4px;
 }
 
 .sidebar a {
@@ -60,90 +56,57 @@
     box-shadow: inset 4px 0 0 #32ff32;
 }
 
-/* ====== MAIN CONTENT AREA ====== */
+/*  MAIN  */
 .main-content {
     flex: 1;
     padding: 32px 56px;
 }
 
-/* ====== CARD (form container) ====== */
-.card {
-    background: #020617;
-    border-radius: 12px;
-    border: 1px solid #064e3b;
-    padding: 24px 32px 32px;
-    animation: neonPulse 2s infinite alternate;
+h1 {
+    margin: 0 0 6px;
 }
 
+p {
+    margin-top: 0;
+    color: #9ca3af;
+}
+
+/*  CARD  */
+.card {
+    background: #020617;
+    border-radius: 14px;
+    border: 1px solid #064e3b;
+    padding: 24px 32px 32px;
+    margin-top: 20px;
+    box-shadow:
+        0 0 20px #00ff7b88,
+        0 0 60px #00ff7b44;
+}
+
+/*  CARD HEADER  */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
 .card-title {
     font-size: 22px;
     font-weight: 600;
-    margin-bottom: 24px;
     color: #32ff32;
     text-shadow: 0 0 12px #32ff32;
 }
 
-/* ====== FORM GRID (2 COLUMNS) ====== */
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 24px;
-}
-
-.form-grid .full-width {
-    grid-column: 1 / -1;
-}
-
-/* ====== FORM FIELDS ====== */
-.form-field label {
-    display: block;
-    font-size: 12px;
-    color: #9ca3af;
-    margin-bottom: 4px;
-}
-
-.form-field input,
-.form-field select {
-    width: 100%;
-    padding: 9px 11px;
-    font-size: 14px;
-    border-radius: 6px;
-    border: 1px solid #064e3b;
-    background: #020617;
-    color: #e5e7eb;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: inset 0 0 10px #22c55e55;
-}
-
-.form-field input::placeholder,
-.form-field select {
-    color: #6b7280;
-}
-
-.form-field input:focus,
-.form-field select:focus {
-    border-color: #22c55e;
-    box-shadow: 0 0 0 1px #22c55e, inset 0 0 10px #22c55eaa;
-}
-
-/* ====== SAVE BUTTON (neon) ====== */
-.form-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 8px;
-}
-
+/*  BUTTON  */
 .btn-primary {
-    padding: 10px 28px;
+    padding: 10px 26px;
     background: #32ff32;
-    border: none;
     border-radius: 8px;
-    color: #000000;
+    color: #000;
+    text-decoration: none;
     font-size: 14px;
     font-weight: 600;
-    cursor: pointer;
     box-shadow: 0 0 20px #32ff32;
     transition: 0.25s;
 }
@@ -151,29 +114,130 @@
 .btn-primary:hover {
     background: #4dff4d;
     box-shadow: 0 0 30px #4dff4d;
-    transform: translateY(-1px);
 }
 
-/* ====== FEEDBACK MESSAGE ====== */
-.feedback {
-    margin-bottom: 16px;
+/*  TABLE  */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
     font-size: 14px;
-    color: #bbf7d0;
-    background: #052e16;
-    border: 1px solid #22c55e;
-    border-radius: 4px;
-    padding: 8px 10px;
 }
 
-/* ====== ANIMATIONS ====== */
-@keyframes neonPulse {
-    0% {
-        box-shadow: 0 0 10px #00ff7b, 0 0 40px #00ff7b, 0 0 80px #00ff7b;
+.data-table th {
+    padding: 12px;
+    background: #022c22;
+    color: #32ff32;
+    border-bottom: 2px solid #064e3b;
+    text-align: left;
+}
+
+.data-table td {
+    padding: 12px;
+    border-bottom: 1px solid #064e3b;
+}
+
+.data-table tr:hover {
+    background: #022c22;
+}
+
+/*  BADGES  */
+.badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge.sales-lead {
+    background: #052e16;
+    color: #32ff32;
+    border: 1px solid #22c55e;
+    box-shadow: 0 0 6px #22c55e88;
+}
+
+.badge.support {
+    background: #020617;
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+    box-shadow: 0 0 6px #38bdf888;
+}
+
+/*  ACTION LINKS  */
+.data-table td a {
+    color: #38bdf8;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.data-table td a:hover {
+    text-shadow: 0 0 8px #38bdf8;
+}
+/*  FORM ELEMENTS  */
+input[type="text"],        
+input[type="date"],        
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #064e3b;
+    border-radius: 8px;
+    background: #020617;
+    color: #e5e7eb;
+    font-size: 14px;
+    box-shadow: inset 0 0 10px #00ff7b33;
+    transition: 0.25s;
+}   
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #32ff32;
+    box-shadow: 0 0 12px #32ff32;
+    outline: none;
+}           
+button {
+    padding: 10px 26px;
+    background: #32ff32;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 0 20px #32ff32;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    background: #4dff4d;
+    box-shadow: 0 0 30px #4dff4d;
+}   
+/*  FORM LABELS  */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #32ff32;
+}
+/* FORM TEXTAREA */
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+/*  RESPONSIVE  */
+@media (max-width: 768px) {
+    .app-wrapper {
+        flex-direction: column;
     }
-    50% {
-        box-shadow: 0 0 20px #00ff7b, 0 0 60px #00ff7b, 0 0 120px #00ff7b;
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #0f172a;
     }
-    100% {
-        box-shadow: 0 0 10px #00ff7b, 0 0 40px #00ff7b, 0 0 80px #00ff7b;
+    .main-content {
+        padding: 24px;
     }
 }
+
+
