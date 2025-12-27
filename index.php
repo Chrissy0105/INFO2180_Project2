@@ -40,10 +40,10 @@ $result = $conn->query($sql);
             </div>
 
             <div class="filters">
-                <a href="index.php?filter=all" id="allF">All</a>
-                <a href="index.php?filter=sales" id="salesF">Sales Leads</a>
-                <a href="index.php?filter=support" id="supportF">Support</a>
-                <a href="index.php?filter=mine" id="mineF">Assigned to me</a>
+                <a href="index.php?filter=all" class="fill">All</a>
+                <a href="index.php?filter=sales" class="fill">Sales Leads</a>
+                <a href="index.php?filter=support" class="fill">Support</a>
+                <a href="index.php?filter=mine" class="fill">Assigned to me</a>
             </div>
 
             <table class="data-table">

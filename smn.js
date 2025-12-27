@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", function(event){
 		defaultajx(url);
 	});	
 
-	$(document).on('click','#homeEdit', function(e){
+	$(document).on('click','.btn-primary', function(e){
 		e.preventDefault();
-		let url = $("#homeEdit").attr("href");
+		let url = $(this).attr("href");
 		console.log("Clicked!: "+ url);
 		defaultajx(url);
 	});	
@@ -93,33 +93,13 @@ document.addEventListener("DOMContentLoaded", function(event){
 		defaultajx(url);
 	});
 	
-	$(document).on('click', '#allF', function(e){
+	$(document).on('click', '.fill', function(e){
 		e.preventDefault();
-		let url = $("#allF").attr("href");
+		let url = $(this).attr("href");
 		console.log("Clicked!: "+ url);
 		defaultajx(url);
 	});	
 	
-	$(document).on('click', '#salesF', function(e){
-		e.preventDefault();
-		let url = $("#salesF").attr("href");
-		console.log("Clicked!: "+ url);
-		defaultajx(url);
-	});
-
-	$(document).on('click', '#supportF', function(e){
-		e.preventDefault();
-		let url = $("#supportF").attr("href");
-		console.log("Clicked!: "+ url);
-		defaultajx(url);
-	});
-	
-	$(document).on('click', '#mineF', function(e){
-		e.preventDefault();
-		let url = $("#mineF").attr("href");
-		console.log("Clicked!: "+ url);
-		defaultajx(url);
-	});
 	
 	$(document).on('click', '#button', function(e){
 		e.preventDefault();
