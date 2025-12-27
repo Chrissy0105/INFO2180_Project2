@@ -65,31 +65,6 @@ $notes_stmt->bind_param("i", $contact_id);
 $notes_stmt->execute();
 $notes_result = $notes_stmt->get_result();
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dolphin CRM – View Contact</title>
-    <link rel="stylesheet" href="dashboard.css">
-</head>
-
-<body class="app-body">
-
-<div class="top-nav">Dolphin CRM</div>
-
-<div class="app-wrapper">
-
-<aside class="sidebar">
-    <ul>
-        <li><a href="dashboard.php">Home</a></li>
-        <li><a href="new_contact.php">New Contact</a></li>
-        <li><a href="view_contacts.php">Contacts</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
-</aside>
-
-<main class="main-content">
 <div class="card">
 
     <!-- CONTACT HEADER -->
@@ -146,11 +121,6 @@ $notes_result = $notes_stmt->get_result();
     <a href="view_contacts.php">&larr; Back to Contacts</a>
 
 </div>
-</main>
-
-</div>
-</body>
-</html>
 
 <?php
 $notes_stmt->close();

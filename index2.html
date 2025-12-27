@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="dashboard.css">
 	<script src="smn.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script src="script.php"></script>
 </head>
 <body class="app-body">
 
@@ -17,9 +18,9 @@
 
     <aside class="sidebar">
         <ul>
-            <li><a href="view_contacts.php" data-page="index.php" class="active" id="home">Home</a></li>
+            <li><a href="index.php" data-page="index.php" class="active" id="home">Home</a></li>
             <li><a href="new_contact.php" data-page="new_contact.php" id="new_contact">New Contact</a></li>
-            <li><a href="add_note.php">Notes</a></li>
+            <li><a href="">Notes</a></li>
             <?php if ($role === 'administrator'): ?>
                 <li><a href="new_user.php" data-page="new_user.php" id="new_user">New User</a></li>
                 <li><a href="view_users.php" data-page="view_users.php" id="users">Users</a></li>

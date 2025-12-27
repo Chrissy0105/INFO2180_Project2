@@ -52,29 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dolphin CRM – New Case</title>
-    <link rel="stylesheet" href="dashboard.css">
-</head>
-<body class="app-body">
-
-<div class="top-nav">Dolphin CRM</div>
-
-<div class="app-wrapper">
-
-    <aside class="sidebar">
-        <ul>
-            <li><a href="dashboard.php">Home</a></li>
-            <li><a href="new_case.php" class="active">New Case</a></li>
-            <li><a href="view_cases.php">Cases</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </ul>
-    </aside>
-
-    <main class="main-content">
         <div class="card">
             <div class="card-title">New Case</div>
 
@@ -113,11 +90,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             </form>
         </div>
-    </main>
-
-</div>
-
-</body>
-</html>
 
 <?php $conn->close(); ?>
