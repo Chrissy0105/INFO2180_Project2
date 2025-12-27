@@ -6,6 +6,20 @@
     color: #e5e7eb;
 }
 
+.fill {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #e5e7eb;
+}
+
+.fill:hover {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: hsl(121, 10%, 50%);
+    color: #e5e7eb;
+	border-radius: 2px;
+}
+
 /*  TOP NAV BAR  */
 .top-nav {
     height: 60px;
