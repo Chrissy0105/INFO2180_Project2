@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function(event){
 	const logout = document.querySelector("#logout");
 	let main = document.querySelector("#main");
 	const hView = document.querySelector("#homeview");
-	
+
+
 	const defaultajx = function(loc){
 		$.ajax(loc)
 			.done(function(result){
@@ -64,9 +65,9 @@ document.addEventListener("DOMContentLoaded", function(event){
 		defaultajx(url);
 	});
 	
-	$(document).on('click','#homeView', function(e){
+	$(document).on('click','.homeView', function(e){
 		e.preventDefault();
-		let url = $("#homeView").attr("href");
+		let url = $(this).attr("href");
 		console.log("Clicked!: "+ url);
 		defaultajx(url);
 	});	

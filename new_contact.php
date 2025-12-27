@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         );
 
         if ($stmt->execute()) {
-            header("Location: index.php");
+            $feedback = "Contact added successfully.";
             exit();
         } else {
             $feedback = "Error adding contact.";

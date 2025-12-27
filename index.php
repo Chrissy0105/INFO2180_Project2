@@ -75,11 +75,11 @@ $result = $conn->query($sql);
                             </td>
 
                             <td>
-                                <a href="view_contact.php?id=<?= $row['id'] ?>" id="homeView">View</a>
+                                <a href="view_contact.php?id=<?= $row['id'] ?>" class="homeView">View</a>
                             	<?php if ($role === 'administrator'): ?>
-                                        | <a href="edit_contact.php?id=<?= $row['id'] ?>" id="homeEdit">Edit</a>
-                                        | <a href="delete_contact.php?id=<?= $row['id'] ?>" onclick="return confirm('Delete this contact?')" id="homeDelete">Delete</a>
-                                        | <a href="new_task.php?contact_id=<?= $row['id'] ?>" id="homeTask">Add Task</a>
+                                        | <a href="edit_contact.php?id=<?= $row['id'] ?>" class="homeEdit">Edit</a>
+                                        | <a href="delete_contact.php?id=<?= $row['id'] ?>" onclick="return confirm('Delete this contact?')" class="homeDelete">Delete</a>
+                                        | <a href="new_task.php?contact_id=<?= $row['id'] ?>" class="homeTask">Add Task</a>
                                     <?php endif; ?>
 							</td>
 							
