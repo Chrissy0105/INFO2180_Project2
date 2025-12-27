@@ -77,9 +77,9 @@ $result = $conn->query($sql);
                             <td>
                                 <a href="view_contact.php?id=<?= $row['id'] ?>" class="homeView">View</a>
                             	<?php if ($role === 'administrator'): ?>
-                                        | <a href="edit_contact.php?id=<?= $row['id'] ?>" class="homeEdit">Edit</a>
-                                        | <a href="delete_contact.php?id=<?= $row['id'] ?>" onclick="return confirm('Delete this contact?')" class="homeDelete">Delete</a>
-                                        | <a href="new_task.php?contact_id=<?= $row['id'] ?>" class="homeTask">Add Task</a>
+                                        | <a href="edit_contact.php?id=<?= $row['id'] ?>" class="homeView">Edit</a>
+                                        | <a href="delete_contact.php?id=<?= $row['id'] ?>" onclick="return confirm('Delete this contact?')" class="homeView">Delete</a>
+                                        | <a href="new_task.php?contact_id=<?= $row['id'] ?>" class="homeView">Add Task</a>
                                     <?php endif; ?>
 							</td>
 							
