@@ -147,4 +147,18 @@ document.addEventListener("DOMContentLoaded", function(event){
 		console.log("Clicked!: "+ url);
 		defaultajx(url);
 	});	
+	
+	$(document).on('click', '#return_to_contact_from_view_contact', function(e){
+		e.preventDefault();
+		let url = $("#return_to_contact_from_view_contact").attr("href");
+		console.log("Clicked!: "+ url);
+		defaultajx(url);
+	});	
+	
+	$(document).on('click', '#addContactFromDash', function(e){
+		e.preventDefault();
+		let url = $("#addContactFromDash").attr("href");
+		console.log("Clicked!: "+ url);
+		defaultajx(url);
+	});	
 });

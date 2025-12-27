@@ -118,7 +118,7 @@ $notes_result = $notes_stmt->get_result();
     </form>
 
     <br>
-    <a href="view_contacts.php">&larr; Back to Contacts</a>
+    <a href="view_contacts.php" id="return_to_contact_from_view_contact">&larr; Back to Contacts</a>
 
 </div>
 
