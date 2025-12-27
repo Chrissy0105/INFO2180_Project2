@@ -25,10 +25,10 @@ session_start();
         <form class="login-form" method="POST" action="user_login.php">
             <input type="email" name="email" placeholder="Email address" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <button type="submit" id="logSub">Login</button>
         </form>
     </div>
-
+	<main class="main-content" id="main"></main>
     <footer class="footer">
         Copyright © 2022 Dolphin CRM
     </footer>

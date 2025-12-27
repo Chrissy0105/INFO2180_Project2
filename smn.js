@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 								 console.log("fetch error");
 								});	
 	}
+	
 
 	$('#home').on('click',function(e){
 		e.preventDefault();
@@ -71,27 +72,6 @@ document.addEventListener("DOMContentLoaded", function(event){
 		console.log("Clicked!: "+ url);
 		defaultajx(url);
 	});	
-
-	$(document).on('click','.btn-primary', function(e){
-		e.preventDefault();
-		let url = $(this).attr("href");
-		console.log("Clicked!: "+ url);
-		defaultajx(url);
-	});	
-
-	$(document).on('click', '#homeDelete', function(e){
-		e.preventDefault();
-		let url = $("#homeDelete").attr("href");
-		console.log("Clicked!: "+ url);
-		defaultajx(url);
-	});	
-
-	$(document).on('click', '#homeTask', function(e){
-		e.preventDefault();
-		let url = $("#homeTask").attr("href");
-		console.log("Clicked!: "+ url);
-		defaultajx(url);
-	});
 	
 	$(document).on('click', '.fill', function(e){
 		e.preventDefault();
@@ -129,9 +109,9 @@ document.addEventListener("DOMContentLoaded", function(event){
 		defaultajx(url);
 	});	
 	
-	$(document).on('click', '#return_to_contact_from_view_contact', function(e){
+	$(document).on('click', '.return_to_contact_from_view_contact', function(e){
 		e.preventDefault();
-		let url = $("#return_to_contact_from_view_contact").attr("href");
+		let url = $(this).attr("href");
 		console.log("Clicked!: "+ url);
 		defaultajx(url);
 	});	

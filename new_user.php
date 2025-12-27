@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if ($stmt->execute()) {
                 $feedback = "User added successfully.";
-				header("Location: view_users.php");
+				header("Location: index2.html");
             } else {
                 $feedback = "Error adding user: " . htmlspecialchars($conn->error);
             }
@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     <div class="form-field full-width">
                         <div class="form-actions">
-                            <button href="new_user.php" type="submit" class="btn-primary">Save</button>
+                            <button type="submit" class="btn-primary">Save</button>
                         </div>
                     </div>
 

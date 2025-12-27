@@ -45,6 +45,6 @@ $conn->query("
 ");
 
 // Redirect back to the contact page
-header("Location: view_contact.php?id=$contact_id");
+header("Location: index2.html");
 exit();
 ?>
