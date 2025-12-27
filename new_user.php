@@ -2,10 +2,7 @@
 session_start();
 
 // Only allow logged-in Admins
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'administrator') {
-    header("Location: login.php");
-    exit();
-}
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'administrator')  die("Access denied.");
 
 $feedback = "";
 

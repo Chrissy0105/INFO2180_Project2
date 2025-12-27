@@ -28,6 +28,7 @@ if ($filter === 'sales') {
 
 $sql .= " ORDER BY created_at DESC";
 $result = $conn->query($sql);
+
 // Contacts
 $contacts_result = $conn->query("SELECT id, title, firstname, lastname, email, company, type FROM Contacts ORDER BY created_at DESC");
 

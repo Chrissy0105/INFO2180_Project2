@@ -3,8 +3,7 @@ session_start();
 
 /* Only administrators can delete contacts */
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'administrator') {
-    header("Location: dashboard.php");
-    exit();
+    die("Access denied.");
 }
 
 if (!isset($_GET['id'])) {
