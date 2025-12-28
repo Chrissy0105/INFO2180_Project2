@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($stmt->execute()) {
             $feedback = "Contact added successfully.";
-			header("Location: index2.html");
+			header("Location: new_contact.php");
         } else {
             $feedback = "Error adding contact.";
         }
@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <div class="form-field full-width">
                     <div class="form-actions">
-                        <button type="submit" class="btn-primary">Save</button>
+                        <button type="submit" class="new_con">Save</button>
                     </div>
                 </div>
 
