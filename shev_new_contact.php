@@ -1,11 +1,13 @@
 <?php
 session_start();
 
+/*Any logged-in user can add a contact */ 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 
+/* Database connection */
 $conn = new mysqli('localhost', 'root', '', 'dolphin_crm');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -13,12 +15,14 @@ if ($conn->connect_error) {
 
 $feedback = "";
 
+/* Fetches users for Assigned to drop down */
 $users = [];
 $userResult = $conn->query("SELECT id, firstname, lastname FROM USERS ORDER BY firstname");
 while ($row = $userResult->fetch_assoc()) {
     $users[] = $row;
 }
 
+/* Handle form submission */
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $title       = trim($_POST['title'] ?? '');
@@ -28,21 +32,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $telephone   = trim($_POST['telephone'] ?? '');
     $company     = trim($_POST['company'] ?? '');
     $type        = $_POST['type'] ?? '';
-    $assigned_to = $_POST['assigned_to'] !== "" ? (int)$_POST['assigned_to'] : null;
-    $created_by  = $_SESSION['user_id'];
+    $assigned_to = $_POST['assigned_to'] ?: null;
+    $created_by = $_SESSION['user_id'];
 
+    /* Validation */
     if ($firstname === "" || $lastname === "" || $email === "") {
         $feedback = "First name, last name, and email are required.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $feedback = "Please enter a valid email address.";
-    } elseif (!in_array($type, ['sales', 'support'])) {
+    } elseif ($type !== "sales lead" && $type !== "support") {
         $feedback = "Invalid contact type selected.";
     } else {
 
         $stmt = $conn->prepare(
             "INSERT INTO Contacts
-             (Title, firstname, lastname, email, telephone, company, type, assigned_to, created_by)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            (Title, firstname, lastname, email, telephone, company, type, assigned_to, created_by)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
 
         $stmt->bind_param(
@@ -60,7 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($stmt->execute()) {
             $feedback = "Contact added successfully.";
-			header("Location: index2.html");
         } else {
             $feedback = "Error adding contact.";
         }
@@ -69,7 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-       <div class="card">
+
+        <div class="card">
             <div class="card-title">New Contact</div>
 
             <?php if ($feedback): ?>
@@ -112,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <label for="type">Type</label>
                     <select id="type" name="type" required>
                         <option value="">Select type</option>
-                        <option value="sales">Sales Lead</option>
+                        <option value="sales lead">Sales Lead</option>
                         <option value="support">Support</option>
                     </select>
                 </div>
@@ -123,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <option value="">Unassigned</option>
                         <?php foreach ($users as $user): ?>
                             <option value="<?= $user['id'] ?>">
-                                <?= htmlspecialchars($user['firstname'].' '.$user['lastname']) ?>
+                                <?= htmlspecialchars($user['firstname'] . ' ' . $user['lastname']) ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -137,5 +142,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             </form>
         </div>
+
 
 <?php $conn->close(); ?>

@@ -1,11 +1,13 @@
 <?php
-session_start();        
+session_start();        // Start the session 
 
+//Database connection 
 $conn = new mysqli("localhost", "root", "", "dolphin_crm");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// User login 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -26,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['lastname'] = $lastname;
             $_SESSION['role'] = $role;
 
-            header("Location: dashboard.php");
+            header("Location: index2.html");
             exit();
         } else {
             echo "Invalid password.";
