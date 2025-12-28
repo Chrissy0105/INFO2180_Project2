@@ -189,7 +189,9 @@ p {
 }
 /*  FORM ELEMENTS  */
 input[type="text"],        
-input[type="date"],        
+input[type="date"], 
+input[type="password"],
+input[type="email"],
 select,
 textarea {
     width: 100%;
@@ -204,6 +206,8 @@ textarea {
 }   
 input[type="text"]:focus,
 input[type="date"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
 select:focus,
 textarea:focus {
     border-color: #32ff32;

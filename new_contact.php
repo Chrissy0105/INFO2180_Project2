@@ -1,4 +1,8 @@
 <?php
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); // For MySQLi
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -41,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $stmt = $conn->prepare(
             "INSERT INTO Contacts
-             (Title, firstname, lastname, email, telephone, company, type, assigned_to, created_by)
+             (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
 
