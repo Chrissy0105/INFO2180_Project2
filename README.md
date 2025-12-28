@@ -33,18 +33,18 @@ Authentication
 
 User roles & permissions
  -	Administrator
-   - Log in to the system
-   -	Add users
-   -	View users
-   -	Add contacts
-   -	View all contacts
-   -	Assign contacts to users
-   -	View contacts assigned to themselves
+    - Log in to the system
+    -	Add users
+    -	View users
+    -	Add contacts
+    -	View all contacts
+    -	Assign contacts to users
+    -	View contacts assigned to themselves
  -	Regular user
-   -	Log in to the system
-   -	Add contacts
-   -	View contacts
-   -	View contacts assigned to themselves
+    -	Log in to the system
+    -	Add contacts
+    -	View contacts
+    -	View contacts assigned to themselves
 
 User Management -
 Administrators can:
@@ -56,14 +56,14 @@ Contact Management
 
 Authenticated administrator users can:
  -	Add new contacts with the following details:
-   - Title
-   - First name
-   - Last name
-   - Email
-   - Telephone
-   - Company
-   - Type (Sales Lead or Support)
-   - 	Assigned user
+    - Title
+    - First name
+    - Last name
+    - Email
+    - Telephone
+    - Company
+    - Type (Sales Lead or Support)
+    - 	Assigned user
  -	View all contacts in a structured dashboard table
  -	View individual contact details
 
@@ -71,10 +71,10 @@ Dashboard & Filtering
 The dashboard provides:
  -	A unified view of all contacts
  -	Filters to display:
-   -	All contacts
-   - Sales Leads
-   -	Support contacts
-   -	Contacts assigned to the logged-in user
+    -	All contacts
+    - Sales Leads
+    - 	Support contacts
+    -	Contacts assigned to the logged-in user
  - Visual badges to clearly distinguish contact types
 
 User Interface
@@ -93,9 +93,9 @@ The system uses a MySQL database with:
  - Notes table for future extensibility
  -	Audit_Log table for tracking changes
  -	Triggers to:
-   -	Sanitize input
-   -	Prevent duplicate contacts
-   -	Log insert and update actions
+    -	Sanitize input
+    -	Prevent duplicate contacts
+    -	Log insert and update actions
 
 Validation & Security
  -	Server-side form validation
