@@ -1,8 +1,4 @@
 <?php
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); // For MySQLi
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -45,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $stmt = $conn->prepare(
             "INSERT INTO Contacts
-             (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by)
+             (Title, firstname, lastname, email, telephone, company, type, assigned_to, created_by)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
 
@@ -63,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         );
 
         if ($stmt->execute()) {
-            $feedback = "Contact added successfully.";
-			header("Location: new_contact.php");
+            header("Location: dashboard.php");
+            exit();
         } else {
             $feedback = "Error adding contact.";
         }
