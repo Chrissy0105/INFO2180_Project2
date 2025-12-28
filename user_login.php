@@ -2,7 +2,7 @@
 session_start();        // Start the session 
 
 //Database connection 
-$conn = new mysqli("localhost", "root", "", "info2180_project2");
+$conn = new mysqli("localhost", "root", "", "dolphin_crm");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, firstname, lastname, password, role FROM Users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, firstname, lastname, password, role FROM USERS WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['lastname'] = $lastname;
             $_SESSION['role'] = $role;
 
-            header("Location: dashboard.php");
+            header("Location: index2.html");
             exit();
         } else {
             echo "Invalid password.";
